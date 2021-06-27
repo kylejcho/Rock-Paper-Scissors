@@ -10,8 +10,8 @@ function computerPlay() {
     }
 }
 
-
-const playerSelection = "rock";
+//const playerSelection = window.prompt("What's your selection");
+let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "rock") {
@@ -21,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == "rock" && computerSelection == "paper"){
         return ("You lose! Paper beats rocks.");
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        return ("You lose! Scissors beats rocks.");
+        return ("You lose! Scissors beats paper.");
     } else if (playerSelection == "paper" && computerSelection == "paper") {
         return ("It's a tie");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
@@ -34,11 +34,5 @@ function playRound(playerSelection, computerSelection) {
         return ("It's a tie!"); 
     }
   }
-
-const computerSelection = computerPlay();
-
-
-
-
 
 console.log(playRound(playerSelection, computerSelection));
