@@ -10,7 +10,7 @@ function computerPlay() {
     }
 }
 
-//const playerSelection = window.prompt("What's your selection");
+
 let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection) {
@@ -35,4 +35,57 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-console.log(playRound(playerSelection, computerSelection));
+
+
+let computerDiv = document.querySelector('#computerDiv');
+
+let rockImage = document.createElement('img');
+rockImage.classList.add("rockComputer");
+rockImage.src = '/Rock.png';
+
+if (computerSelection === "rock") {
+    computerDiv.appendChild(rockImage);
+}
+
+let paperImage = document.createElement('img');
+paperImage.classList.add("paperComputer");
+paperImage.src = '/Paper.png';
+
+if (computerSelection === "paper") {
+    computerDiv.appendChild(paperImage);
+}
+
+let scissorImage = document.createElement('img');
+scissorImage.classList.add("scissorsComputer");
+scissorImage.src = '/Scissors.png';
+
+if (computerSelection === "scissors") {
+    computerDiv.appendChild(scissorImage);
+}
+
+
+
+
+let playerDiv = document.querySelector('#playerDiv');
+
+let rockButton = document.querySelector('#rockButton');
+let rockImage1 = document.createElement('img');
+rockImage1.classList.add("rockPlayer");
+rockImage1.src = '/Rock.png';
+
+rockButton.onclick = function() {
+    console.log('selected rock');
+    playerDiv.appendChild(rockImage1);
+}
+
+
+let scissorsButton = document.querySelector('#scissorsButton');
+let scissorsImage1 = document.createElement('img');
+scissorsImage1.classList.add("scissorsPlayer");
+scissorsImage1.src = '/Scissors.png';
+
+scissorsButton.onclick = function() {
+    alert("hi");
+    console.log('selected scissors');
+    playerDiv.appendChild(scissorsImage1);
+}

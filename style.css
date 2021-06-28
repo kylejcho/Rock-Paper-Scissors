@@ -48,17 +48,56 @@ nav h3 {
 }
 
 #playerDiv {
-    background: rgb(255, 89, 89);
-    width: 25%;
-}
-
-#computerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgb(255, 228, 228);
     width: 25%;
 }
 
+#computerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 228, 228);
+    width: 25%;
+}
+
+.rockComputer{
+    width: 120px;
+    height: 200px;
+}
+
+.paperComputer{
+    width: 120px;
+    height: 200px;
+}
+
+.scissorsComputer{
+    width: 120px;
+    height: 200px;
+}
+
+.rockPlayer{
+    width: 120px;
+    height: 200px;
+}
+
+.paperPlayer{
+    width: 120px;
+    height: 200px;
+}
+
+.scissorsPlayer{
+    width: 120px;
+    height: 200px;
+}
+
+
+
+
 #platform {
-    background: rgb(55, 55, 55);
+    background: rgb(164, 98, 98);
     height: 5%;
 }
 
@@ -73,6 +112,7 @@ nav h3 {
     justify-content: center;
     font-weight: 400;
     height: 10%;
+    background: rgb(255, 241, 241)
 }
 
 #selectionButtonDiv {
@@ -83,11 +123,38 @@ nav h3 {
     background: rgb(198, 185, 185);
 }
 
+#selectionButtonDiv button {
+    padding: 0;
+    border: none;
+    background: rgb(255, 241, 241);
+}
+
+#selectionButtonDiv button:hover {
+    padding: 0;
+    border: none;
+    background: rgb(241, 227, 227);
+}
+
+#rockImg {
+    width: 120px;
+    height: 200px;
+}
+
+#paperImg {
+    width: 130px;
+    height: 200px;
+}
+
+#scissorsImg {
+    width: 100px;
+    height: 200px;
+}
+
 #fightDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 249, 249);
+    background: rgb(255, 168, 168);
     height: 10%;
 }
 
