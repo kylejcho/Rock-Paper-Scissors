@@ -10,30 +10,9 @@ function computerPlay() {
     }
 }
 
-
 let computerSelection = computerPlay();
+console.log(computerSelection);
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "rock") {
-        return ("It's a tie!");
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return ("You win! Rock beats scissors.");
-    } else if (playerSelection == "rock" && computerSelection == "paper"){
-        return ("You lose! Paper beats rocks.");
-    } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        return ("You lose! Scissors beats paper.");
-    } else if (playerSelection == "paper" && computerSelection == "paper") {
-        return ("It's a tie");
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return ("You Win! Paper beats rocks.");
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return ("You lose! Rocks beat scissors.");
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return ("You win! Paper beats scissors."); 
-    } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-        return ("It's a tie!"); 
-    }
-  }
 
 
 
@@ -65,6 +44,7 @@ if (computerSelection === "scissors") {
 
 
 
+let playerSelection = '';
 
 let playerDiv = document.querySelector('#playerDiv');
 
@@ -74,6 +54,7 @@ rockImage1.classList.add("rockPlayer");
 rockImage1.src = '/Rock.png';
 
 rockButton.onclick = function() {
+    playerSelection = 'rock';
     console.log('selected rock');
     if (playerDiv.children.length > 0) {
         playerDiv.removeChild(playerDiv.firstChild);
@@ -88,6 +69,7 @@ scissorsImage1.classList.add("scissorsPlayer");
 scissorsImage1.src = '/Scissors.png';
 
 scissorsButton.onclick = function() {
+    playerSelection = 'scissors';
     console.log('selected scissors');
     if (playerDiv.children.length > 0) {
         playerDiv.removeChild(playerDiv.firstChild);
@@ -102,9 +84,60 @@ paperImage1.classList.add("paperPlayer");
 paperImage1.src = '/Paper.png';
 
 paperButton.onclick = function() {
+    playerSelection = 'paper';
     console.log('selected paper');
     if (playerDiv.children.length > 0) {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(paperImage1);
 }
+
+
+
+
+
+function playRound(playerSelection, computerSelection) {
+    console.log("Round has been initiated");
+    console.log(computerSelection);
+    console.log(playerSelection);
+    if (playerSelection == "rock" && computerSelection == "rock") {
+        console.log("its a tie");
+        return ("It's a tie!");
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        console.log("You win! Rock beats scissors.");
+        return ("You win! Rock beats scissors.");
+    } else if (playerSelection == "rock" && computerSelection == "paper"){
+        console.log("You lose! Paper beats rocks.");
+        return ("You lose! Paper beats rocks.");
+    } else if (playerSelection == "paper" && computerSelection == "scissors"){
+        console.log("You lose! Scissors beats paper.");
+        return ("You lose! Scissors beats paper.");
+    } else if (playerSelection == "paper" && computerSelection == "paper") {
+        console.log("It's a tie");
+        return ("It's a tie");
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        console.log("You Win! Paper beats rocks.");
+        return ("You Win! Paper beats rocks.");
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        console.log("You lose! Rocks beat scissors.");
+        return ("You lose! Rocks beat scissors.");
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        console.log("You win! Paper beats scissors.");
+        return ("You win! Paper beats scissors."); 
+    } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+        console.log("It's a tie");
+        return ("It's a tie!"); 
+    }
+  }
+
+
+
+
+
+
+let fightButton = document.querySelector('#fightButton');
+
+fightButton.addEventListener('click', () => {
+    playRound(playerSelection, computerSelection);
+  });
+
