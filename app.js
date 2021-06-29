@@ -75,6 +75,9 @@ rockImage1.src = '/Rock.png';
 
 rockButton.onclick = function() {
     console.log('selected rock');
+    if (playerDiv.children.length > 0) {
+        playerDiv.removeChild(playerDiv.firstChild);
+    }
     playerDiv.appendChild(rockImage1);
 }
 
@@ -85,7 +88,23 @@ scissorsImage1.classList.add("scissorsPlayer");
 scissorsImage1.src = '/Scissors.png';
 
 scissorsButton.onclick = function() {
-    alert("hi");
     console.log('selected scissors');
+    if (playerDiv.children.length > 0) {
+        playerDiv.removeChild(playerDiv.firstChild);
+    }
     playerDiv.appendChild(scissorsImage1);
+}
+
+
+let paperButton = document.querySelector('#paperButton');
+let paperImage1 = document.createElement('img');
+paperImage1.classList.add("paperPlayer");
+paperImage1.src = '/Paper.png';
+
+paperButton.onclick = function() {
+    console.log('selected paper');
+    if (playerDiv.children.length > 0) {
+        playerDiv.removeChild(playerDiv.firstChild);
+    }
+    playerDiv.appendChild(paperImage1);
 }
