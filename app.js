@@ -11,7 +11,7 @@ function computerPlay() {
 }
 
 let computerSelection = computerPlay();
-console.log(computerSelection);
+console.log("Computer selected " + computerSelection);
 
 
 
@@ -98,34 +98,23 @@ paperButton.onclick = function() {
 
 function playRound(playerSelection, computerSelection) {
     console.log("Round has been initiated");
-    console.log(computerSelection);
-    console.log(playerSelection);
     if (playerSelection == "rock" && computerSelection == "rock") {
-        console.log("its a tie");
         return ("It's a tie!");
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("You win! Rock beats scissors.");
         return ("You win! Rock beats scissors.");
     } else if (playerSelection == "rock" && computerSelection == "paper"){
-        console.log("You lose! Paper beats rocks.");
-        return ("You lose! Paper beats rocks.");
+        return ("You lose! Paper beats rock.");
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        console.log("You lose! Scissors beats paper.");
         return ("You lose! Scissors beats paper.");
     } else if (playerSelection == "paper" && computerSelection == "paper") {
-        console.log("It's a tie");
         return ("It's a tie");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("You Win! Paper beats rocks.");
-        return ("You Win! Paper beats rocks.");
+        return ("You Win! Paper beats rock.");
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("You lose! Rocks beat scissors.");
         return ("You lose! Rocks beat scissors.");
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("You win! Paper beats scissors.");
         return ("You win! Paper beats scissors."); 
     } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-        console.log("It's a tie");
         return ("It's a tie!"); 
     }
   }
@@ -138,6 +127,6 @@ function playRound(playerSelection, computerSelection) {
 let fightButton = document.querySelector('#fightButton');
 
 fightButton.addEventListener('click', () => {
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
   });
 
