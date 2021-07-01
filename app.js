@@ -22,25 +22,32 @@ let rockImage = document.createElement('img');
 rockImage.classList.add("rockComputer");
 rockImage.src = '/Rock.png';
 
+/*
 if (computerSelection === "rock") {
     computerDiv.appendChild(rockImage);
 }
+*/
 
 let paperImage = document.createElement('img');
 paperImage.classList.add("paperComputer");
 paperImage.src = '/Paper.png';
 
+/*
 if (computerSelection === "paper") {
     computerDiv.appendChild(paperImage);
 }
+*/
 
 let scissorImage = document.createElement('img');
 scissorImage.classList.add("scissorsComputer");
 scissorImage.src = '/Scissors.png';
 
+/*
 if (computerSelection === "scissors") {
     computerDiv.appendChild(scissorImage);
 }
+*/
+
 
 
 
@@ -121,12 +128,25 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-
-
-
 let fightButton = document.querySelector('#fightButton');
 
 fightButton.addEventListener('click', () => {
-    console.log(playRound(playerSelection, computerSelection));
+    let result = document.querySelector('#result');
+
+    if (computerSelection === "rock") {
+        computerDiv.appendChild(rockImage);
+    } else if (computerSelection === "paper") {
+        computerDiv.appendChild(paperImage);
+    } else {
+        computerDiv.appendChild(scissorImage);
+    }
+
+    setTimeout(function () {
+        result.innerHTML = playRound(playerSelection, computerSelection);
+    }, 000);
+
   });
 
+
+
+  
