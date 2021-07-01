@@ -145,6 +145,13 @@ fightButton.addEventListener('click', () => {
         result.innerHTML = playRound(playerSelection, computerSelection);
     }, 000);
 
+    computerSelection = computerPlay();
+
+    setTimeout(function () {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }, 1500);
+    
+    
   });
 
 
