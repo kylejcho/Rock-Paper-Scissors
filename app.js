@@ -10,8 +10,6 @@ function computerPlay() {
     }
 }
 
-let computerSelection = computerPlay();
-console.log("Computer selected " + computerSelection);
 
 
 
@@ -67,6 +65,9 @@ rockButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(rockImage1);
+    if (computerDiv.children.length > 0) {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }
 }
 
 
@@ -82,6 +83,10 @@ scissorsButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(scissorsImage1);
+
+    if (computerDiv.children.length > 0) {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }
 }
 
 
@@ -97,6 +102,9 @@ paperButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(paperImage1);
+    if (computerDiv.children.length > 0) {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }
 }
 
 
@@ -114,13 +122,13 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
         return ("You lose! Scissors beats paper.");
     } else if (playerSelection == "paper" && computerSelection == "paper") {
-        return ("It's a tie");
+        return ("It's a tie!");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
         return ("You Win! Paper beats rock.");
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
         return ("You lose! Rocks beat scissors.");
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return ("You win! Paper beats scissors."); 
+        return ("You win! Scissors beats paper."); 
     } else if (playerSelection == "scissors" && computerSelection == "scissors") {
         return ("It's a tie!"); 
     }
@@ -131,7 +139,11 @@ function playRound(playerSelection, computerSelection) {
 let fightButton = document.querySelector('#fightButton');
 
 fightButton.addEventListener('click', () => {
-    let result = document.querySelector('#result');
+    if (computerDiv.children.length > 0) {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }
+    
+    computerSelection = computerPlay();
 
     if (computerSelection === "rock") {
         computerDiv.appendChild(rockImage);
@@ -141,17 +153,11 @@ fightButton.addEventListener('click', () => {
         computerDiv.appendChild(scissorImage);
     }
 
+    let result = document.querySelector('#result');
+    
     setTimeout(function () {
         result.innerHTML = playRound(playerSelection, computerSelection);
     }, 000);
-
-    computerSelection = computerPlay();
-
-    setTimeout(function () {
-        computerDiv.removeChild(computerDiv.firstChild);
-    }, 1500);
-    
-    
   });
 
 
