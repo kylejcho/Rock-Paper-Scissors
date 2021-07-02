@@ -47,6 +47,10 @@ if (computerSelection === "scissors") {
 */
 
 
+let knightAudio = document.querySelector('#knightAudio');
+let wizardAudio = document.querySelector('#wizardAudio');
+
+
 
 
 let playerSelection = '';
@@ -68,6 +72,7 @@ rockButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    knightAudio.play();
 }
 
 
@@ -87,6 +92,7 @@ scissorsButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    wizardAudio.play();
 }
 
 
