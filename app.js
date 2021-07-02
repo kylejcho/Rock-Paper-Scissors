@@ -20,31 +20,15 @@ let rockImage = document.createElement('img');
 rockImage.classList.add("rockComputer");
 rockImage.src = 'Rock1Comp.png';
 
-/*
-if (computerSelection === "rock") {
-    computerDiv.appendChild(rockImage);
-}
-*/
 
 let paperImage = document.createElement('img');
 paperImage.classList.add("paperComputer");
 paperImage.src = 'Paper1Comp.png';
 
-/*
-if (computerSelection === "paper") {
-    computerDiv.appendChild(paperImage);
-}
-*/
 
 let scissorImage = document.createElement('img');
 scissorImage.classList.add("scissorsComputer");
 scissorImage.src = 'Scissors1Comp.png';
-
-/*
-if (computerSelection === "scissors") {
-    computerDiv.appendChild(scissorImage);
-}
-*/
 
 
 let knightAudio = document.querySelector('#knightAudio');
@@ -52,6 +36,7 @@ let wizardAudio = document.querySelector('#wizardAudio');
 let winAudio = document.querySelector('#winAudio');
 let tieAudio = document.querySelector('#tieAudio');
 let cannonAudio = document.querySelector('#cannonAudio');
+
 
 let playerSelection = '';
 
@@ -187,12 +172,18 @@ fightButton.addEventListener('click', () => {
             tieAudio.play();
         }
 
-        playerScore.innerHTML = "Player Score: " + playerWins;
-        computerScore.innerHTML = "Computer Score: " +computerWins;
+        playerScore.innerHTML = "Player: " + playerWins;
+        computerScore.innerHTML = "Computer: " + computerWins;
 
+        if (playerWins === 5 ) {
+            alert("You Win!")
+            location.reload();
+        } else if (computerWins === 5) {
+            alert("You Lose!");
+            location.reload();
+        }
+    
 
-        console.log("playerScore: " + playerWins);
-        console.log("computerScore: " + computerWins);
     }, 800);
 
     
