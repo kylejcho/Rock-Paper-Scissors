@@ -130,6 +130,8 @@ function playRound(playerSelection, computerSelection) {
   let playerWins = 0; 
   let computerWins = 0;
   let playerScore = document.querySelector("#playerScore");
+  playerScore.innerHTML = "Player: " ;
+  computerScore.innerHTML = "Computer: " ;
 
 let fightButton = document.querySelector('#fightButton');
 
@@ -159,17 +161,41 @@ fightButton.addEventListener('click', () => {
         wizardAudio.play();
     }
 
+
+    function winBanner() {
+        result.style.color = "green";
+        result.style.background = "rgb(233, 255, 233)";
+        result.style.border = "3px solid rgb(114, 185, 114)";
+    }
+
+    function loseBanner() {
+        result.style.color = "rgb(255, 87, 87)";
+        result.style.background = "rgb(255, 226, 226)";
+        result.style.border = "3px solid rgb(255, 129, 129)";
+    }
+
+    function tieBanner() {
+        result.style.color = "rgb(255, 87, 87)";
+        result.style.background = "rgb(255, 255, 255)";
+        result.style.border = "3px solid rgb(255, 255, 255)";
+        result.style.color = "rgb(72, 72, 72)";
+    }
     
+    tieBanner();
+
     setTimeout(function () {
         result.innerHTML = playRound(playerSelection, computerSelection);
         if (result.innerHTML.indexOf("win") > -1) {
             winAudio.play();
             playerWins += 1;
+            winBanner();
         } else if (result.innerHTML.indexOf("lose") > -1) {
             loseAudio.play();
             computerWins += 1;
+            loseBanner();
         } else {
             tieAudio.play();
+            tieBanner();
         }
 
         playerScore.innerHTML = "Player: " + playerWins;
@@ -182,7 +208,6 @@ fightButton.addEventListener('click', () => {
             alert("You Lose!");
             location.reload();
         }
-    
 
     }, 800);
 

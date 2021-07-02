@@ -32,13 +32,26 @@ nav h3 {
     height: 83%;
 }
 
+#resultDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: auto;
+}
+
 #result {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    height: 10%;
+    font-size: 1.4rem;
     color: rgb(72, 72, 72);
+    width: 30%;
+    height: 35%;
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.192);
 }
 
 #stage {
@@ -54,18 +67,23 @@ nav h3 {
     justify-content: center;
     width: 10%;
     height: auto;
-    color: rgb(77, 77, 77);
-    font-weight: 500;
+    color: rgb(167, 167, 167);
+    font-weight: 400;
     font-size: 2em;
 }
 
 #playerScore {
     display: flex;
     justify-content: center;
-    width: 20%;
+    align-items: center;
+    height: 50px;
+    margin: 25px;
+    width: 10%;
     color: rgb(241, 81, 81);
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    border: 2px solid rgb(241, 81, 81);
+    border-radius: 50px;
 }
 
 
@@ -73,10 +91,15 @@ nav h3 {
 #computerScore {
     display: flex;
     justify-content: center;
-    width: 20%;
+    align-items: center;
+    height: 50px;
+    margin: 25px;
+    width: 12%;
     color: rgb(241, 81, 81);
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    border: 2px solid rgb(241, 81, 81);
+    border-radius: 50px;
 }
 
 #playerDiv {
@@ -193,32 +216,32 @@ nav h3 {
 }
 
 #selectionButtonDiv #rockButton:hover {
-    transform: translateY(-10px);
-    transition: all ease-in-out 0.3s;
+    box-shadow: 0 0 0 8px gold;
+    transition: ease-in-out 0.1s;
 }
 
 #selectionButtonDiv #rockButton:not(:hover) {
-    transition: all ease-in-out 0.3s;
+    transition:  ease-in-out 0.3s;
 }
 
 
 #selectionButtonDiv #paperButton:hover {
-    transform: translateY(-10px);
-    transition: all ease-in-out 0.3s;
+    box-shadow: 0 0 0 8px gold;
+    transition:  ease-in-out 0.1s;
 }
 
 #selectionButtonDiv #paperButton:not(:hover) {
-    transition: all ease-in-out 0.3s;
+    transition:  ease-in-out 0.3s;
 }
 
 
 #selectionButtonDiv #scissorsButton:hover {
-    transform: translateY(-10px);
-    transition: all ease-in-out 0.3s;
+    box-shadow: 0 0 0 8px gold;
+    transition:  ease-in-out 0.1s;
 }
 
 #selectionButtonDiv #scissorsButton:not(:hover) {
-    transition: all ease-in-out 0.3s;
+    transition:  ease-in-out 0.3s;
 }
 
 
@@ -241,6 +264,7 @@ nav h3 {
 #rockImg {
     width: 320px;
     height: 220px;
+    
 }
 
 #paperImg {
@@ -276,10 +300,10 @@ nav h3 {
 }
 
 #fightButton:hover {
-    background: rgb(247, 125, 125);
-    height: 36%;
-    width: 10.5%;
+    background: white;
     transition: ease-in-out 0.1s;
+    border: 2px solid rgb(255, 129, 129);
+    color: rgb(255, 129, 129);
 }
 
 #fightButton:not(:hover) {
