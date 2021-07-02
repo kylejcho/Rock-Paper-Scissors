@@ -18,7 +18,7 @@ let computerDiv = document.querySelector('#computerDiv');
 
 let rockImage = document.createElement('img');
 rockImage.classList.add("rockComputer");
-rockImage.src = '/Rock1Comp.png';
+rockImage.src = 'Rock1Comp.png';
 
 /*
 if (computerSelection === "rock") {
@@ -28,7 +28,7 @@ if (computerSelection === "rock") {
 
 let paperImage = document.createElement('img');
 paperImage.classList.add("paperComputer");
-paperImage.src = '/Paper1Comp.png';
+paperImage.src = 'Paper1Comp.png';
 
 /*
 if (computerSelection === "paper") {
@@ -38,7 +38,7 @@ if (computerSelection === "paper") {
 
 let scissorImage = document.createElement('img');
 scissorImage.classList.add("scissorsComputer");
-scissorImage.src = '/Scissors1Comp.png';
+scissorImage.src = 'Scissors1Comp.png';
 
 /*
 if (computerSelection === "scissors") {
@@ -60,7 +60,7 @@ let playerDiv = document.querySelector('#playerDiv');
 let rockButton = document.querySelector('#rockButton');
 let rockImage1 = document.createElement('img');
 rockImage1.classList.add("rockPlayer");
-rockImage1.src = '/Rock1.png';
+rockImage1.src = 'Rock1.png';
 
 rockButton.onclick = function() {
     playerSelection = 'rock';
@@ -79,7 +79,7 @@ rockButton.onclick = function() {
 let scissorsButton = document.querySelector('#scissorsButton');
 let scissorsImage1 = document.createElement('img');
 scissorsImage1.classList.add("scissorsPlayer");
-scissorsImage1.src = '/Scissors1.png';
+scissorsImage1.src = 'Scissors1.png';
 
 scissorsButton.onclick = function() {
     playerSelection = 'scissors';
@@ -99,7 +99,7 @@ scissorsButton.onclick = function() {
 let paperButton = document.querySelector('#paperButton');
 let paperImage1 = document.createElement('img');
 paperImage1.classList.add("paperPlayer");
-paperImage1.src = '/Paper1.png';
+paperImage1.src = 'Paper1.png';
 
 paperButton.onclick = function() {
     playerSelection = 'paper';
