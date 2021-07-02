@@ -50,11 +50,27 @@ nav h3 {
 }
 
 #stage p {
-    width: 35px;
+    display: flex;
+    justify-content: center;
+    width: 10%;
     height: auto;
     color: rgb(241, 81, 81);
     font-weight: 500;
     font-size: 2em;
+}
+
+#playerScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+#computerScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
 }
 
 #playerDiv {
@@ -204,7 +220,7 @@ nav h3 {
     margin-left: 30px;
     margin-right: 30px;
     border: none;
-    width: 600px;
+    width: 35%;
     background: rgb(255, 255, 255);
     border-radius: 50px;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.109);

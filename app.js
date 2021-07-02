@@ -49,9 +49,9 @@ if (computerSelection === "scissors") {
 
 let knightAudio = document.querySelector('#knightAudio');
 let wizardAudio = document.querySelector('#wizardAudio');
-
-
-
+let winAudio = document.querySelector('#winAudio');
+let tieAudio = document.querySelector('#tieAudio');
+let cannonAudio = document.querySelector('#cannonAudio');
 
 let playerSelection = '';
 
@@ -111,6 +111,7 @@ paperButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    cannonAudio.play();
 }
 
 
@@ -130,7 +131,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == "paper" && computerSelection == "paper") {
         return ("It's a tie!");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return ("You Win! Paper beats rock.");
+        return ("You win! Paper beats rock.");
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
         return ("You lose! Rocks beat scissors.");
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
@@ -141,31 +142,62 @@ function playRound(playerSelection, computerSelection) {
   }
 
 
+  let playerWins = 0; 
+  let computerWins = 0;
+  let playerScore = document.querySelector("#playerScore");
 
 let fightButton = document.querySelector('#fightButton');
 
 fightButton.addEventListener('click', () => {
+    if (playerSelection == '') {
+        return;
+    }
+
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
-    }
+    } 
+    
+    let result = document.querySelector('#result');
+    result.innerHTML = '';
+    
     
     computerSelection = computerPlay();
 
     if (computerSelection === "rock") {
         computerDiv.appendChild(rockImage);
+        knightAudio.play();
     } else if (computerSelection === "paper") {
         computerDiv.appendChild(paperImage);
+        cannonAudio.play();
     } else {
         computerDiv.appendChild(scissorImage);
+        wizardAudio.play();
     }
 
-    let result = document.querySelector('#result');
     
     setTimeout(function () {
         result.innerHTML = playRound(playerSelection, computerSelection);
-    }, 000);
+        if (result.innerHTML.indexOf("win") > -1) {
+            winAudio.play();
+            playerWins += 1;
+        } else if (result.innerHTML.indexOf("lose") > -1) {
+            loseAudio.play();
+            computerWins += 1;
+        } else {
+            tieAudio.play();
+        }
+
+        playerScore.innerHTML = "Player Score: " + playerWins;
+        computerScore.innerHTML = "Computer Score: " +computerWins;
+
+
+        console.log("playerScore: " + playerWins);
+        console.log("computerScore: " + computerWins);
+    }, 800);
+
+    
+    
   });
 
 
 
-  
