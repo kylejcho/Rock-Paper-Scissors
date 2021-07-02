@@ -203,18 +203,27 @@ fightButton.addEventListener('click', () => {
         playerScore.innerHTML = "Player: " + playerWins;
         computerScore.innerHTML = "Computer: " + computerWins;
 
-        if (playerWins === 5 ) {
-            alert("You Win!")
-            location.reload();
-        } else if (computerWins === 5) {
-            alert("You Lose!");
-            location.reload();
+        if (playerWins === 3 ) {
+            let popupWinDiv = document.querySelector('#popupWinDiv');
+            popupWinDiv.classList.toggle('active');
+            
+        } else if (computerWins === 3) {
+            let popupLoseDiv = document.querySelector('#popupLoseDiv');
+            popupLoseDiv.classList.toggle('active');
         }
 
     }, 800);
 
-    
-    
   });
 
+let buttonPopupDiv = document.querySelector(".buttonPopupDiv");
 
+buttonPopupDiv.addEventListener('click', () => {
+    location.reload();
+});
+
+let popupButton = document.querySelector(".popupButton2");
+
+popupButton.addEventListener('click', () => {
+    location.reload();
+});

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
-
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 * {
     padding: 0;
@@ -24,8 +24,8 @@ nav h3 {
     justify-content: center;
     transform: translateY(25%);
     color: rgb(241, 81, 81);
-    font-weight: 500;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 2.5rem;
 }
 
 .main {
@@ -221,32 +221,43 @@ nav h3 {
     border-radius: 50px;
 }
 
-#selectionButtonDiv #rockButton:hover {
+#rockButton {
+    position: relative;
+}
+
+#rockButton:hover {
     box-shadow: 0 0 0 8px gold;
     transition: ease-in-out 0.1s;
 }
 
-#selectionButtonDiv #rockButton:not(:hover) {
+#rockButton:not(:hover) {
     transition:  ease-in-out 0.3s;
 }
 
+#paperButton {
+    position: relative;
+}
 
-#selectionButtonDiv #paperButton:hover {
+#paperButton:hover {
     box-shadow: 0 0 0 8px gold;
     transition:  ease-in-out 0.1s;
 }
 
-#selectionButtonDiv #paperButton:not(:hover) {
+#paperButton:not(:hover) {
     transition:  ease-in-out 0.3s;
 }
 
 
-#selectionButtonDiv #scissorsButton:hover {
+#scissorsButton {
+    position: relative;
+}
+
+#scissorsButton:hover {
     box-shadow: 0 0 0 8px gold;
     transition:  ease-in-out 0.1s;
 }
 
-#selectionButtonDiv #scissorsButton:not(:hover) {
+#scissorsButton:not(:hover) {
     transition:  ease-in-out 0.3s;
 }
 
@@ -262,23 +273,21 @@ nav h3 {
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.109);
 }
 
-#selectionButtonDiv button:hover {
-    padding: 0;
-    border: none;
-    background: rgb(251, 251, 251);
-}
 
 #rockImg {
     width: 320px;
-    height: 220px;
-    
+    height: 220px; 
 }
 
 #rockBanner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
     color: rgb(117, 117, 117);
     width: 130px;
     height: 40px;
@@ -299,7 +308,11 @@ nav h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
     margin: auto;
+    bottom: -15px;
     font-weight: 600;
     color: rgb(117, 117, 117);
     width: 150px;
@@ -319,7 +332,11 @@ nav h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
     margin: auto;
+    bottom: 1px;
     font-weight: 600;
     color: rgb(117, 117, 117);
     width: 160px;
@@ -417,3 +434,236 @@ footer {
 #email {
     width: 190px
 }
+
+#popupWinDiv {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 150%;
+    background: rgba(76, 141, 184, 0.945);
+  
+}
+
+#popupWinDiv.active {
+    visibility: visible;
+   
+}
+
+
+#popupWin {
+    width: 500px;
+    height: 400px;
+    bottom: 50%;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+   
+}
+
+
+#winIconDiv {
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+    height: 15%;
+}
+
+.fa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color:rgb(52, 242, 52);
+    height: 60px;
+    width: 60px;
+    border: 5px solid rgb(52, 242, 52);
+    border-radius: 50px;
+} 
+
+#winPopupStatement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(22, 22, 22);
+    height: 20%;
+    font-size: 2em;
+}
+
+#popupWin p {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    width: auto;
+    padding: 5%;
+
+    align-items: center;
+    background: rgb(255, 255, 255);
+    
+}
+
+.buttonPopupDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height:100px
+}
+
+.popupButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height:45%;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: rgb(255, 129, 129);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.281);
+    color: white;
+}
+
+.popupButton:hover {
+    background: white;
+    transition: ease-in-out 0.1s;
+    border: 2px solid rgb(255, 129, 129);
+    color: rgb(255, 129, 129);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#popupLoseDiv {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 150%;
+    background: rgba(151, 67, 67, 0.856);
+}
+
+#popupLoseDiv.active {
+    visibility: visible;
+}
+
+
+#popupLose {
+    width: 500px;
+    height: 400px;
+    bottom: 50%;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+
+#loseIconDiv {
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+    height: 15%;
+}
+
+#loseIconDiv p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color:rgb(251, 87, 87);
+    height: 60px;
+    width: 60px;
+    border: 5px solid rgb(251, 87, 87);
+    border-radius: 50px;
+} 
+
+#losePopupStatement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(22, 22, 22);
+    height: 20%;
+    font-size: 2em;
+}
+
+#popupLose p {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    width: auto;
+    padding: 5%;
+
+    align-items: center;
+    background: rgb(255, 255, 255);
+    
+}
+
+.buttonPopupDiv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height:100px
+}
+
+.popupButton2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height:45%;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: rgb(255, 129, 129);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.281);
+    color: white;
+}
+
+.popupButton2:hover {
+    background: white;
+    transition: ease-in-out 0.1s;
+    border: 2px solid rgb(255, 129, 129);
+    color: rgb(255, 129, 129);
+}
+
