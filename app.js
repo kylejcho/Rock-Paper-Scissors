@@ -80,11 +80,13 @@ scissorsButton.onclick = function() {
     if (playerDiv.children.length > 0) {
         playerDiv.removeChild(playerDiv.firstChild);
     }
+
     playerDiv.appendChild(scissorsImage1);
     playerDiv.style.animation = "none";
     window.requestAnimationFrame(function(){
         playerDiv.style.animation = "bounce 0.4s linear";
-      });
+    });
+
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
@@ -157,6 +159,10 @@ let popupCountDiv = document.querySelector('#popupCountDiv');
 
 function popupCount() {
     let popupCount = document.querySelector("#popupCount");
+    popupCount.style.animation = "none";
+    window.requestAnimationFrame(function(){
+        popupCount.style.animation = "countDownBounce 2s linear";
+    });
     popupCount.innerHTML = "ROCK";
     setTimeout(function () {
         popupCount.innerHTML = "PAPER";
@@ -243,6 +249,11 @@ fightButton.addEventListener('click', () => {
             playerWins += 1;
             winBanner();
 
+            computerDiv.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                computerDiv.style.animation = "bounce 0.4s linear";
+            });
+
             playerScore.style.animation = "none";
             window.requestAnimationFrame(function(){
                 playerScore.style.animation = "bounce 0.4s linear";
@@ -251,6 +262,12 @@ fightButton.addEventListener('click', () => {
             loseAudio.play();
             computerWins += 1;
             loseBanner();
+
+            playerDiv.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                playerDiv.style.animation = "bounce 0.4s linear";
+            });
+
             computerScore.style.animation = "none";
             window.requestAnimationFrame(function(){
             computerScore.style.animation = "bounce 0.4s linear";
