@@ -33,9 +33,11 @@ scissorImage.src = 'Scissors1Comp.png';
 
 let knightAudio = document.querySelector('#knightAudio');
 let wizardAudio = document.querySelector('#wizardAudio');
+let cannonAudio = document.querySelector('#cannonAudio');
 let winAudio = document.querySelector('#winAudio');
 let tieAudio = document.querySelector('#tieAudio');
-let cannonAudio = document.querySelector('#cannonAudio');
+let gameWinAudio = document.querySelector('#gameWinAudio');
+let gameLoseAudio = document.querySelector('#gameLoseAudio');
 
 
 let playerSelection = '';
@@ -164,14 +166,22 @@ function popupCount() {
         popupCount.style.animation = "countDownBounce 2s linear";
     });
     popupCount.innerHTML = "ROCK";
+    tieAudio.load();
+    tieAudio.play();
     setTimeout(function () {
         popupCount.innerHTML = "PAPER";
+        tieAudio.load();
+        tieAudio.play();
     }, 500);
     setTimeout(function () {
         popupCount.innerHTML = "SCISSORS";
+        tieAudio.load();
+        tieAudio.play();
     }, 1000);
     setTimeout(function () {
         popupCount.innerHTML = "SHOOT!";
+        tieAudio.load();
+        tieAudio.play();
     }, 1500);
     setTimeout(function () {
         popupCountDiv.style.visibility = "hidden";
@@ -273,6 +283,7 @@ fightButton.addEventListener('click', () => {
             computerScore.style.animation = "bounce 0.4s linear";
             });
         } else {
+            tieAudio.load();
             tieAudio.play();
             tieBanner();
             result.style.animation = "none";
@@ -287,10 +298,12 @@ fightButton.addEventListener('click', () => {
         if (playerWins === 3 ) {
             let popupWinDiv = document.querySelector('#popupWinDiv');
             popupWinDiv.classList.toggle('active');
+            gameWinAudio.play();
             
         } else if (computerWins === 3) {
             let popupLoseDiv = document.querySelector('#popupLoseDiv');
             popupLoseDiv.classList.toggle('active');
+            gameLoseAudio.play();
         }
 
     }, 2500);
