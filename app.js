@@ -47,6 +47,7 @@ let rockImage1 = document.createElement('img');
 rockImage1.classList.add("rockPlayer");
 rockImage1.src = 'Rock1.png';
 
+
 rockButton.onclick = function() {
     playerSelection = 'rock';
     console.log('selected rock');
@@ -54,11 +55,18 @@ rockButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(rockImage1);
+    //
+    playerDiv.style.animation = "none";
+    window.requestAnimationFrame(function(){
+        playerDiv.style.animation = "bounce 0.4s linear";
+      });
+    //
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
     knightAudio.play();
 }
+
 
 
 let scissorsButton = document.querySelector('#scissorsButton');
@@ -73,7 +81,10 @@ scissorsButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(scissorsImage1);
-
+    playerDiv.style.animation = "none";
+    window.requestAnimationFrame(function(){
+        playerDiv.style.animation = "bounce 0.4s linear";
+      });
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
@@ -93,6 +104,10 @@ paperButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(paperImage1);
+    playerDiv.style.animation = "none";
+    window.requestAnimationFrame(function(){
+        playerDiv.style.animation = "bounce 0.4s linear";
+      });
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
@@ -137,10 +152,40 @@ let fightButton = document.querySelector('#fightButton');
 
 
 
+
+let popupCountDiv = document.querySelector('#popupCountDiv');
+
+function popupCount() {
+    let popupCount = document.querySelector("#popupCount");
+    popupCount.innerHTML = "ROCK";
+    setTimeout(function () {
+        popupCount.innerHTML = "PAPER";
+    }, 500);
+    setTimeout(function () {
+        popupCount.innerHTML = "SCISSORS";
+    }, 1000);
+    setTimeout(function () {
+        popupCount.innerHTML = "SHOOT!";
+    }, 1500);
+    setTimeout(function () {
+        popupCountDiv.style.visibility = "hidden";
+    }, 1800);
+}
+
+
 fightButton.addEventListener('click', () => {
     if (playerSelection == '') {
         return;
     }
+    
+    popupCountDiv.style.visibility = "visible";
+    popupCountDiv.classList.toggle('active');
+    if (playerWins !== 3 || computerWins !== 3) {
+        popupCount();
+    }
+
+
+    
 
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
@@ -149,8 +194,11 @@ fightButton.addEventListener('click', () => {
     let result = document.querySelector('#result');
     result.innerHTML = '';
     
-    
     computerSelection = computerPlay();
+
+
+    setTimeout(function () {
+    
 
     if (computerSelection === "rock") {
         computerDiv.appendChild(rockImage);
@@ -163,17 +211,21 @@ fightButton.addEventListener('click', () => {
         wizardAudio.play();
     }
 
+    }, 1900);
 
+    
     function winBanner() {
         result.style.color = "green";
         result.style.background = "rgb(233, 255, 233)";
         result.style.border = "2px solid rgb(114, 185, 114)";
+        result.style.animation = "none";
     }
 
     function loseBanner() {
         result.style.color = "rgb(255, 87, 87)";
         result.style.background = "rgb(255, 226, 226)";
         result.style.border = "2px solid rgb(255, 129, 129)";
+        result.style.animation = "none";
     }
 
     function tieBanner() {
@@ -184,20 +236,32 @@ fightButton.addEventListener('click', () => {
     }
     
     tieBanner();
-
     setTimeout(function () {
         result.innerHTML = playRound(playerSelection, computerSelection);
         if (result.innerHTML.indexOf("win") > -1) {
             winAudio.play();
             playerWins += 1;
             winBanner();
+
+            playerScore.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                playerScore.style.animation = "bounce 0.4s linear";
+            });
         } else if (result.innerHTML.indexOf("lose") > -1) {
             loseAudio.play();
             computerWins += 1;
             loseBanner();
+            computerScore.style.animation = "none";
+            window.requestAnimationFrame(function(){
+            computerScore.style.animation = "bounce 0.4s linear";
+            });
         } else {
             tieAudio.play();
             tieBanner();
+            result.style.animation = "none";
+            window.requestAnimationFrame(function(){
+            result.style.animation = "bounce 0.4s linear";
+             });
         }
 
         playerScore.innerHTML = "Player: " + playerWins;
@@ -212,7 +276,7 @@ fightButton.addEventListener('click', () => {
             popupLoseDiv.classList.toggle('active');
         }
 
-    }, 800);
+    }, 2500);
 
   });
 
