@@ -36,6 +36,7 @@ let wizardAudio = document.querySelector('#wizardAudio');
 let cannonAudio = document.querySelector('#cannonAudio');
 let winAudio = document.querySelector('#winAudio');
 let tieAudio = document.querySelector('#tieAudio');
+let countAudio = document.querySelector('#countAudio');
 let gameWinAudio = document.querySelector('#gameWinAudio');
 let gameLoseAudio = document.querySelector('#gameLoseAudio');
 
@@ -308,8 +309,8 @@ fightButton.addEventListener('click', () => {
             });
 
         } else {
-            tieAudio.load();
-            tieAudio.play();
+            countAudio.load();
+            countAudio.play();
             tieBanner();
             result.style.animation = "none";
             window.requestAnimationFrame(function(){
