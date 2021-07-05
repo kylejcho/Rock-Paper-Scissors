@@ -68,6 +68,7 @@ rockButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    knightAudio.load();
     knightAudio.play();
 }
 
@@ -97,6 +98,7 @@ scissorsButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    wizardAudio.load();
     wizardAudio.play();
 }
 
@@ -125,6 +127,7 @@ paperButton.onclick = function() {
     if (computerDiv.children.length > 0) {
         computerDiv.removeChild(computerDiv.firstChild);
     }
+    cannonAudio.load();
     cannonAudio.play();
 }
 
@@ -230,19 +233,19 @@ fightButton.addEventListener('click', () => {
         computerDiv.appendChild(rockImage);
         let rockComputerImg = computerDiv.appendChild(rockImage);
         rockComputerImg.className = "rockComputerImg";
-
+        knightAudio.load();
         knightAudio.play();
     } else if (computerSelection === "paper") {
         computerDiv.appendChild(paperImage);
         let paperComputerImg = computerDiv.appendChild(paperImage);
         paperComputerImg.className = "paperComputerImg";
-
+        cannonAudio.load()
         cannonAudio.play();
     } else {
         computerDiv.appendChild(scissorImage);
         let scissorsComputerImg = computerDiv.appendChild(scissorImage);
         scissorsComputerImg.className = "scissorsComputerImg";
-
+        wizardAudio.load();
         wizardAudio.play();
     }
 
