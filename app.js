@@ -57,6 +57,8 @@ rockButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(rockImage1);
+    let rockSelectionImg = playerDiv.appendChild(rockImage1);
+    rockSelectionImg.className = "rockSelectionImg"
     //
     playerDiv.style.animation = "none";
     window.requestAnimationFrame(function(){
@@ -68,7 +70,6 @@ rockButton.onclick = function() {
     }
     knightAudio.play();
 }
-
 
 
 let scissorsButton = document.querySelector('#scissorsButton');
@@ -84,6 +85,10 @@ scissorsButton.onclick = function() {
     }
 
     playerDiv.appendChild(scissorsImage1);
+    let scissorsSelectionImg = playerDiv.appendChild(scissorsImage1);
+    scissorsSelectionImg.className = "scissorsSelectionImg"
+
+
     playerDiv.style.animation = "none";
     window.requestAnimationFrame(function(){
         playerDiv.style.animation = "bounce 0.4s linear";
@@ -108,6 +113,11 @@ paperButton.onclick = function() {
         playerDiv.removeChild(playerDiv.firstChild);
     }
     playerDiv.appendChild(paperImage1);
+    let paperSelectionImg = playerDiv.appendChild(paperImage1);
+    paperSelectionImg.className = "paperSelectionImg"
+
+
+
     playerDiv.style.animation = "none";
     window.requestAnimationFrame(function(){
         playerDiv.style.animation = "bounce 0.4s linear";
@@ -218,12 +228,21 @@ fightButton.addEventListener('click', () => {
 
     if (computerSelection === "rock") {
         computerDiv.appendChild(rockImage);
+        let rockComputerImg = computerDiv.appendChild(rockImage);
+        rockComputerImg.className = "rockComputerImg";
+
         knightAudio.play();
     } else if (computerSelection === "paper") {
         computerDiv.appendChild(paperImage);
+        let paperComputerImg = computerDiv.appendChild(paperImage);
+        paperComputerImg.className = "paperComputerImg";
+
         cannonAudio.play();
     } else {
         computerDiv.appendChild(scissorImage);
+        let scissorsComputerImg = computerDiv.appendChild(scissorImage);
+        scissorsComputerImg.className = "scissorsComputerImg";
+
         wizardAudio.play();
     }
 
@@ -258,6 +277,7 @@ fightButton.addEventListener('click', () => {
             winAudio.play();
             playerWins += 1;
             winBanner();
+        
 
             computerDiv.style.animation = "none";
             window.requestAnimationFrame(function(){
@@ -268,6 +288,7 @@ fightButton.addEventListener('click', () => {
             window.requestAnimationFrame(function(){
                 playerScore.style.animation = "bounce 0.4s linear";
             });
+
         } else if (result.innerHTML.indexOf("lose") > -1) {
             loseAudio.play();
             computerWins += 1;
@@ -282,6 +303,7 @@ fightButton.addEventListener('click', () => {
             window.requestAnimationFrame(function(){
             computerScore.style.animation = "bounce 0.4s linear";
             });
+
         } else {
             tieAudio.load();
             tieAudio.play();
