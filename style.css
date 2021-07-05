@@ -937,21 +937,24 @@ footer {
     }
 
     #playerScore {
-        height: 40px;
+        height: 35px;
         width: 8%;
         font-size: 1.15em;
     }
     
     #computerScore {
-        
-        height: 40px;
+        height: 35px;
         width: 10%;
         font-size: 1.15em;
     }
 
+    #selectionPhrase {
+        padding-bottom: 10px;
+    }
+
     #selection {
         background: rgb(255, 255, 255);
-        height: 33%;
+       
     }
     
 }
