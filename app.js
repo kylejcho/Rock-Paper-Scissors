@@ -1,6 +1,5 @@
 //Randomly returns "rock", "paper" or "scissors" 
 function computerPlay() {
-    //returns random integer from 0-2, each number represents a different word. 
     let randNum = Math.floor(Math.random() * 3);
     if (randNum === 0) {
         return "rock";
@@ -16,22 +15,18 @@ function computerPlay() {
 let computerDiv = document.querySelector('#computerDiv');
 
 
-//Rock Image
+//Rock, paper, scissors images
 let rockImage = document.createElement('img');
 rockImage.classList.add("rockComputer");
 rockImage.src = 'Rock1Comp.png';
 
-//Paper Image
 let paperImage = document.createElement('img');
 paperImage.classList.add("paperComputer");
 paperImage.src = 'Paper1Comp.png';
 
-//Scissors Image
 let scissorImage = document.createElement('img');
 scissorImage.classList.add("scissorsComputer");
 scissorImage.src = 'Scissors1Comp.png';
-
-
 
 //Sound Effects
 let knightAudio = document.querySelector('#knightAudio');
@@ -44,11 +39,9 @@ let gameWinAudio = document.querySelector('#gameWinAudio');
 let gameLoseAudio = document.querySelector('#gameLoseAudio');
 
 
-
 //Player Selection is blank until selection is made by user
 let playerSelection = '';
 let playerDiv = document.querySelector('#playerDiv');
-
 
 
 //Rock Button
@@ -339,12 +332,11 @@ let popupCountDiv = document.querySelector('#popupCountDiv');
 
 //Displays "Rock, Paper, Scissors, Shoot!" in .5 second intervals 
 function popupCount() {
-
     function tiePlay() {
         tieAudio.load();
         tieAudio.play();
     }
-    
+
     let popupCount = document.querySelector("#popupCount");
     popupCount.style.animation = "none";
     window.requestAnimationFrame(function(){
