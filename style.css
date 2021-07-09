@@ -269,7 +269,7 @@ nav h3 {
 
 #paperButton img {
     width: 70%;
-    height: 95%;;
+    height: 95%;
 }
 
 #scissorsButton img {
@@ -1121,14 +1121,16 @@ footer {
         height: 75%;;
     }
     
+   
+
     #paperButton img {
-        width: 160%;
-        height: 95%;
-        right: 35px;
+        width: 290%;
+        height: 100%;
     }
 
     #paperButton {
-        padding-right: 45px;
+        padding-right: 80px;
+        margin-bottom: 40px;
     }
     
     #scissorsButton img {
@@ -1143,9 +1145,10 @@ footer {
     }
 
     #paperBanner {
-        width: 90px;
+        width: 100px;
         height: 20px;
         font-size: .65em;
+        bottom: -16px
     }
 
     #scissorsBanner {
