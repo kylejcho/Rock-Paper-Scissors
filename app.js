@@ -264,12 +264,20 @@ fightButton.addEventListener('click', () => {
             //bounce animation for computer side and player scoreboard
             computerDiv.style.animation = "none";
             window.requestAnimationFrame(function(){
-                computerDiv.style.animation = "bounce 0.4s linear";
+                computerDiv.style.animation = "playerDeath 0.5s linear";
+            });
+            playerDiv.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                playerDiv.style.animation = "bounce 0.4s linear";
             });
             playerScore.style.animation = "none";
             window.requestAnimationFrame(function(){
                 playerScore.style.animation = "bounce 0.4s linear";
             });
+            result.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                result.style.animation = "bounce 0.4s linear";
+             });
 
         //If player loses round, other way around
         } else if (result.innerHTML.indexOf("lose") > -1) {
@@ -278,12 +286,16 @@ fightButton.addEventListener('click', () => {
             loseBanner();
             playerDiv.style.animation = "none";
             window.requestAnimationFrame(function(){
-                playerDiv.style.animation = "bounce 0.4s linear";
+                playerDiv.style.animation = "computerDeath 0.5s linear";
             });
             computerScore.style.animation = "none";
             window.requestAnimationFrame(function(){
             computerScore.style.animation = "bounce 0.4s linear";
             });
+            result.style.animation = "none";
+            window.requestAnimationFrame(function(){
+                result.style.animation = "bounce 0.4s linear";
+             });
 
         //If round ends in a tie
         } else {

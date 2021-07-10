@@ -840,6 +840,155 @@ footer {
     }
 }
 
+
+@keyframes playerDeath{
+    5%, 12.5%, 20%, to {
+        transform: translateX(0);
+    }
+    10% {
+        transform:  translateX(-40px);
+    }
+    17.5% {
+        transform:translateX(-15px);
+    }
+    22.5% {
+        transform:translateX(-4px);
+    }
+    
+    
+    27.5%, 35%, 42.5%, to {
+        transform:  translateX(0);
+    }
+    32.5% {
+        transform: translateX(-40px);
+    }
+    40% {
+        transform: translateX(-15px);
+    }
+    45% {
+        transform:  translateX(-4px);
+    }
+
+
+    50%, 57.5%, 65%, to {
+        transform: translateX(0);
+    }
+    55% {
+        transform:  translateX(-40px);
+    }
+    62.5% {
+        transform:  translateX(-15px);
+    }
+    67.5% {
+        transform: translateX(-4px);
+    }
+
+}
+
+@keyframes countDownBounce{
+    5%, 12.5%, 20%, to {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-40px);
+    }
+    17.5% {
+        transform: translateY(-15px);
+    }
+    22.5% {
+        transform: translateY(-4px);
+    }
+    
+    
+    27.5%, 35%, 42.5%, to {
+        transform: translateY(0)
+    }
+    32.5% {
+        transform: translateY(-40px);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    45% {
+        transform: translateY(-4px);
+    }
+
+
+    50%, 57.5%, 65%, to {
+        transform: translateY(0)
+    }
+    55% {
+        transform: translateY(-40px);
+    }
+    62.5% {
+        transform: translateY(-15px);
+    }
+    67.5% {
+        transform: translateY(-4px);
+    }
+
+
+    72.5%, 80%, 87.5%, to {
+        transform: translateY(0)
+    }
+    77.5% {
+        transform: translateY(-40px);
+    }
+    85% {
+        transform: translateY(-15px);
+    }
+    90% {
+        transform: translateY(-4px);
+    }
+
+
+
+}
+
+@keyframes computerDeath{
+    5%, 12.5%, 20%, to {
+        transform: translateX(0);
+    }
+    10% {
+        transform:  translateX(40px);
+    }
+    17.5% {
+        transform:translateX(15px);
+    }
+    22.5% {
+        transform:translateX(4px);
+    }
+    
+    
+    27.5%, 35%, 42.5%, to {
+        transform:  translateX(0);
+    }
+    32.5% {
+        transform: translateX(40px);
+    }
+    40% {
+        transform: translateX(15px);
+    }
+    45% {
+        transform:  translateX(4px);
+    }
+
+
+    50%, 57.5%, 65%, to {
+        transform: translateX(0);
+    }
+    55% {
+        transform:  translateX(40px);
+    }
+    62.5% {
+        transform:  translateX(15px);
+    }
+    67.5% {
+        transform: translateX(4px);
+    }
+
+}
+
 @keyframes countDownBounce{
     5%, 12.5%, 20%, to {
         transform: translateY(0)
